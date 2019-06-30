@@ -17,7 +17,7 @@ client.connect((err) => {
 
 client.query('SELECT * FROM leaderboard', (err, res) => {
   if (err) throw err;
-  console('Success', res);
+  console.log('Success', res);
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
   }
