@@ -7,7 +7,13 @@ const client = new Client({
 
 console.log("Running...");
 
-client.connect();
+client.connect((err) => {
+	if (err) {
+	  console.error('connection error', err.stack)
+	} else {
+	  console.log('connected')
+	}
+  });
 
 client.query('SELECT * FROM leaderboard', (err, res) => {
   if (err) throw err;
