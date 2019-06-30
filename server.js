@@ -11,7 +11,7 @@ client.connect((err) => {
 	if (err) {
 	  console.error('connection error', err.stack)
 	} else {
-	  console.log('Connected')
+	  console.log('Connected!');
 	}
   });
 
@@ -30,16 +30,15 @@ client.query(add, (err, res)=>{
 
 const getAllRows = ()=>{
 
-	console.log('getAllRows');
+	console.log('Get All Rows:');
 
 	client.query('SELECT * FROM leaderboard', (err, res) => {
 		if (err) throw err;
-		console.log('Success', res);
 		for (let row of res.rows) {
 		  console.log(JSON.stringify(row));
 		}
 		client.end();
-	  });
+	});
 
 };
 
