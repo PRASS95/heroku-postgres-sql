@@ -16,9 +16,10 @@ client.connect((err) => {
   });
 
 
-const add = 'INSERT INTO leaderboard ("date", "score", "nickname") VALUES("01-01-2019", 666, "ROMAIN")';
+const add = 'INSERT INTO "public"."leaderboard"("date", "score", "nickname") VALUES("01-01-2019", "666", "ROMAIN") RETURNING "id", "date", "score", "nickname";';
 
 client.query(add, (err, res)=>{
+
 	if (err) throw err;
 
 	console.log('INSERT: Success!');
