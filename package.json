@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node server.js",
-    "build": "cross-env NODE_ENV='production'"
+    "build": "node -v"
   },
   "repo": {
     "url": ""
