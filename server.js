@@ -15,11 +15,26 @@ client.connect((err) => {
 	}
   });
 
-client.query('SELECT * FROM leaderboard', (err, res) => {
-  if (err) throw err;
-  console.log('Success', res);
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
+
+const add = 'INSERT INTO leaderboard ("date", "score", "nickname") VALUES("01-01-2019", 666, "ROMAIN")';
+
+client.query(add, (err, res)=>{
+	if (err) throw err;
+
+	getAllRows();
+
 });
+
+const getAllRows = ()=>{
+
+	client.query('SELECT * FROM leaderboard', (err, res) => {
+		if (err) throw err;
+		console.log('Success', res);
+		for (let row of res.rows) {
+		  console.log(JSON.stringify(row));
+		}
+		client.end();
+	  });
+
+};
+
