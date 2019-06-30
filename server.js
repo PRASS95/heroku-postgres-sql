@@ -16,7 +16,7 @@ client.connect((err) => {
   });
 
 
-const add = 'INSERT INTO "public"."leaderboard"("date", "score", "nickname") VALUES("01-01-2019", "666", "ROMAIN") RETURNING "id", "date", "score", "nickname";';
+const add = 'INSERT INTO "public"."leaderboard"("id", "date", "score", "nickname") VALUES(0, "01-01-2019", "666", "ROMAIN") RETURNING "id", "date", "score", "nickname";';
 
 client.query(add, (err, res)=>{
 
