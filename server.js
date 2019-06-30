@@ -21,11 +21,15 @@ const add = 'INSERT INTO leaderboard ("date", "score", "nickname") VALUES("01-01
 client.query(add, (err, res)=>{
 	if (err) throw err;
 
+	console.log('INSERT: Success!');
+
 	getAllRows();
 
 });
 
 const getAllRows = ()=>{
+
+	console.log('getAllRows');
 
 	client.query('SELECT * FROM leaderboard', (err, res) => {
 		if (err) throw err;
