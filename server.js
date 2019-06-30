@@ -11,12 +11,13 @@ client.connect((err) => {
 	if (err) {
 	  console.error('connection error', err.stack)
 	} else {
-	  console.log('connected')
+	  console.log('Connected')
 	}
   });
 
 client.query('SELECT * FROM leaderboard', (err, res) => {
   if (err) throw err;
+  console('Success', res);
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
   }
